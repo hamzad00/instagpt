@@ -1,0 +1,85 @@
+/* Custom styles for InstaGPT */
+
+.message-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: var(--bs-primary);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.assistant-message {
+    background-color: var(--bs-secondary);
+    color: white;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+.user-list {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.user-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.user-item:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.user-item.active {
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* RTL support for Persian/Farsi */
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Login page styles */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty state styles */
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--bs-secondary);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}

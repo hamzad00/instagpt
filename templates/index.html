@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-lock me-2"></i>Admin Login</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Admin Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header bg-info">
+                <h4 class="mb-0"><i class="fas fa-info-circle me-2"></i>About InstaGPT</h4>
+            </div>
+            <div class="card-body">
+                <p>InstaGPT is an automated Instagram message response system that uses OpenAI's GPT to generate contextual replies while maintaining conversation history.</p>
+                
+                <h5>Features:</h5>
+                <ul>
+                    <li>Webhook endpoint for receiving Instagram messages</li>
+                    <li>Automated responses using OpenAI's GPT</li>
+                    <li>Conversation memory for each user</li>
+                    <li>Support for Persian/Farsi language</li>
+                </ul>
+                
+                <h5>To get started:</h5>
+                <ol>
+                    <li>Make sure your OPENAI_API_KEY is set in environment variables</li>
+                    <li>Connect Instagram webhook to <code>/webhook</code> endpoint</li>
+                    <li>Login to the admin panel to monitor conversations</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0"><i class="fas fa-code me-2"></i>API Documentation</h4>
+            </div>
+            <div class="card-body">
+                <h5>Webhook Endpoint</h5>
+                <p>Use this endpoint to receive and respond to Instagram messages:</p>
+                <pre><code>POST /webhook
+Content-Type: application/json
+
+{
+    "user_id": "instagram_user_id",
+    "message": "User's message text"
+}
+</code></pre>
+
+                <h5>Response Format</h5>
+                <pre><code>{
+    "reply": "Generated response from GPT"
+}
+</code></pre>
+
+                <h5>Test Endpoint</h5>
+                <p>Check if the service is running:</p>
+                <pre><code>GET /test</code></pre>
+                
+                <p>This will return basic status information about the service.</p>
+                
+                <div class="alert alert-warning mt-4">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Important:</strong> Make sure to set your OpenAI API key in the environment variables.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
