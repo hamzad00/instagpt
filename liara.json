@@ -4,5 +4,5 @@
   "port": 5000,
   "pythonVersion": "3.10",
   "buildCommand": "pip install -r requirements.txt",
-  "startCommand": "python main_watchdog_combined.py"
+  "startCommand": "python main.py"
 }
