@@ -3,7 +3,6 @@ openai
 email-validator
 flask
 flask-sqlalchemy
-gunicorn
 openai
 psycopg2-binary
 requests
